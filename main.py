@@ -41,7 +41,7 @@ today = datetime(year=2023, month=8, day=15)
 
 pixela_data = {
     "date": today.strftime("%Y%m%d"),
-    "quantity": "1"
+    "quantity": input("how many hours did you code today? ")
 }
 
 response = requests.post(url=post_endpoint, json=pixela_data, headers=headers)
@@ -51,7 +51,7 @@ print(response.text)
 update_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/{today.strftime('%Y%m%d')}"
 
 new_pixel_data = {
-    "quantity": "1",
+    "quantity": input("Enter hours to update. "),
 }
 
 # response = requests.put(url=update_endpoint, json=pixela_data, headers=headers)
